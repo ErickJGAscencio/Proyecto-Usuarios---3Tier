@@ -36,3 +36,11 @@ public class MascotaController {
         return ResponseEntity.ok(mascotaSave);
     }
 }
+// Y luego en tu servicio o controlador puedes mapear así:
+
+// java
+// MascotaDto dto = new MascotaDto();
+// dto.setId(mascota.getId());
+// dto.setNombre(mascota.getNombre());
+// dto.setEdad(mascota.getEdad());
+// dto.setUsuarioId(mascota.getUsuario().getId());

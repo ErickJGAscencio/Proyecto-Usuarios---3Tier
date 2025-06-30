@@ -1,16 +1,26 @@
 package com.example.usuarios.dto;
 
 public class MascotaDto {
+    private Long id;
     private String nombre;
     private Integer edad;
     private Long usuarioId;
 
     public MascotaDto() {}
 
-    public MascotaDto(String nombre, Integer edad, Long usuarioId) {
+    public MascotaDto(Long id, String nombre, Integer edad, Long usuarioId) {
+        this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.usuarioId = usuarioId;
+    }
+    
+    public Long getId(){
+        return this.id;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 
     public String getNombre() {

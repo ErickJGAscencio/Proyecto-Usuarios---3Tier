@@ -18,17 +18,17 @@ public class Mascota {
     private Long id;
     private String nombre;
     private Integer edad;
-    // @ManyToOne
-    // @JoinColumn(name = "USUARIO_ID")
-    private Long usuarioId;
+    @ManyToOne
+    @JoinColumn(name = "USUARIO_ID")
+    private Usuario usuario;
 
     public Mascota(){}
     
-    public Mascota(Long id, String nombre, Integer edad, Long usuarioId){
+    public Mascota(Long id, String nombre, Integer edad, Usuario usuario){
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
-        this.usuarioId = usuarioId;
+        this.usuario = usuario;
     }
     public Long getId(){
         return this.id;
@@ -48,11 +48,11 @@ public class Mascota {
     public void setEdad(Integer edad){
         this.edad = edad;
     }
-    public Long getUsuario() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
-    public void setUsuario(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 }
