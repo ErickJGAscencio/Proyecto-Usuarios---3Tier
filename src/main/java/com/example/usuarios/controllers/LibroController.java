@@ -54,6 +54,11 @@ public class LibroController {
         return libroRepository.findByPrecioGreaterThan(181.0, LibroCOnAutorProjection.class);
     }
 
+    @GetMapping("/libros/largos")
+    public List<LibroProjections.ConAutor> getLibrosLargos() {
+        return libroRepository.findLibrosLargos(350);
+    }
+
     // @GetMapping("/libros/baratos")
     // public List<LibroCOnAutorProjection> getLibrosBaratos() {
     //     return libroRepository.findByPrecioLowerThan(180.0, LibroCOnAutorProjection.class);
