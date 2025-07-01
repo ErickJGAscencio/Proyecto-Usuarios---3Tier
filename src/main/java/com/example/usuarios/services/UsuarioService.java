@@ -29,6 +29,11 @@ public class UsuarioService {
         // return usuarioRepository.findById(id).orElse(null);
     }
 
+    public ResponseEntity<Usuario> agregarUsuario(Usuario usuario){
+        Usuario usuarioSave = usuarioRepository.save(usuario);
+        return ResponseEntity.ok(usuarioSave);
+    } 
+
     public ResponseEntity<String> eliminarUsuario(Long id){
         // Usuario usuario = usuarios.stream().filter(us -> us.getId().equals(id)).findFirst().orElse(null);
         // if (usuario != null) {
@@ -43,11 +48,6 @@ public class UsuarioService {
         })
         .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado"));
     }
-
-    public ResponseEntity<Usuario> agregarUsuario(Usuario usuario){
-        Usuario usuarioSave = usuarioRepository.save(usuario);
-        return ResponseEntity.ok(usuarioSave);
-    } 
 
     public ResponseEntity<String> modificarUsuario(Long id, Usuario data){
         return usuarioRepository.findById(id)

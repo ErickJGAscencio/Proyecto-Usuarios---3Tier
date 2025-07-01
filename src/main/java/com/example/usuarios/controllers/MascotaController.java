@@ -9,10 +9,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 public class MascotaController {
@@ -34,5 +37,15 @@ public class MascotaController {
     @PostMapping("/mascota")
     public ResponseEntity<Mascota> agregarMascota(@RequestBody Mascota mascota){
         return mascotaService.agregarMascota(mascota);
+    }
+
+    @DeleteMapping("/mascota/{id}")
+    public ResponseEntity<String> elimiarMascota(@PathVariable Long id){
+        return mascotaService.eliminarMascota(id);
+    }
+
+    @PutMapping("mascota/{id}")
+    public ResponseEntity<String> modificarMascota(@PathVariable Long id, @RequestBody Mascota data){
+        return mascotaService.modificarMascota(id, data);
     }
 }
