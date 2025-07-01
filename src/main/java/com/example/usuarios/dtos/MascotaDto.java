@@ -1,4 +1,4 @@
-package com.example.usuarios.dto;
+package com.example.usuarios.dtos;
 
 public class MascotaDto {
     private Long id;

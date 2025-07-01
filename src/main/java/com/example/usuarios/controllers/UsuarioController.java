@@ -28,23 +28,22 @@ public class UsuarioController {
     }
 
     @GetMapping("/usuarios")
-    public List<Usuario> usuarios() {
-        return usuarioService.obtenerTodas();
+    public List<Usuario> obtenerTodos() {
+        return usuarioService.obtenerTodos();
     }
 
     @GetMapping("/usuario/{id}")
-    public ResponseEntity<Usuario> obtenerUsuario(@PathVariable Long id) {
+    public ResponseEntity<Usuario> obtenerPorId(@PathVariable Long id) {
         return usuarioService.obtenerPorId(id);
     }
 
     // @RequestMapping(path = "/usuario/{id}", method=RequestMethod.DELETE)
     @DeleteMapping("/usuario/{id}")
-    public ResponseEntity<String> borrarUsuario(@PathVariable Long id) {
+    public ResponseEntity<String> eliminarUsuario(@PathVariable Long id) {
         return usuarioService.eliminarUsuario(id);
     }
 
     @PostMapping("/usuario")
-    
     public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario){
     // public String agregarUsuario(@RequestBody Usuario usuario) {
         // Long id = usuarios.stream().mapToLong(Usuario::getId).max().orElse(0) + 1;
