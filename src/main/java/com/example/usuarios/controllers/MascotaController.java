@@ -3,7 +3,7 @@ package com.example.usuarios.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.usuarios.entities.Mascota;
-import com.example.usuarios.repositories.MascotaRepository;
+import com.example.usuarios.services.MascotaService;
 
 import java.util.List;
 
@@ -17,30 +17,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class MascotaController {
     @Autowired
-    private MascotaRepository mascotaRepository;
+    private MascotaService mascotaService;
 
     @GetMapping("/mascotas")
     public List<Mascota> mascotas() {
-        return mascotaRepository.findAll();
+        // return mascotaRepository.findAll(); //Qutiamos esto de aquí y la colocamos en la capa de servicio, de esta forma separamos las responsabilidades
+        // el controlador solo se encarga de pedir la solicitud al servicio quien es quien interactua con la base de datos.
+        return mascotaService.obtenerTodas();
     }
 
     @GetMapping("/mascota/{id}")
     public ResponseEntity<Mascota> obtenerMascota(@PathVariable Long id){
-        return mascotaRepository.findById(id).map(
-            mascota -> ResponseEntity.ok(mascota)).orElse(ResponseEntity.notFound().build());
+        return mascotaService.obtenerPorId(id);
     }
 
     @PostMapping("/mascota")
     public ResponseEntity<Mascota> agregarMascota(@RequestBody Mascota mascota){
-        Mascota mascotaSave = mascotaRepository.save(mascota);
-        return ResponseEntity.ok(mascotaSave);
+        return mascotaService.agregarMascota(mascota);
     }
 }
-// Y luego en tu servicio o controlador puedes mapear así:
-
-// java
-// MascotaDto dto = new MascotaDto();
-// dto.setId(mascota.getId());
-// dto.setNombre(mascota.getNombre());
-// dto.setEdad(mascota.getEdad());
-// dto.setUsuarioId(mascota.getUsuario().getId());
