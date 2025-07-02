@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.usuarios.entities.Libro;
-import com.example.usuarios.interfaces.LibroBasicoProjection;
+// import com.example.usuarios.interfaces.LibroBasicoProjection;
 import com.example.usuarios.interfaces.LibroCOnAutorProjection;
 import com.example.usuarios.interfaces.LibroProjections;
 import com.example.usuarios.repositories.LibroRepository;
