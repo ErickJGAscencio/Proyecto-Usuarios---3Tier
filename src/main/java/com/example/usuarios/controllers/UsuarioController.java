@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 public class UsuarioController {
+
     
     @Autowired
     private UsuarioService usuarioService;
