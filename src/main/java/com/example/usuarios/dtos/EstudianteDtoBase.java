@@ -5,8 +5,7 @@ public class EstudianteDtoBase {
     protected String nombre;
     protected String email;
     
-    public EstudianteDtoBase() {
-    }
+    public EstudianteDtoBase() { }
 
     public EstudianteDtoBase(Long id, String nombre, String email) {
         this.id = id;

@@ -14,7 +14,13 @@ public class EstudianteMapper {
         dto.setId(e.getId());
         dto.setNombre(e.getNombre());
         dto.setEmail(e.getEmail());
-        dto.setNombreCurso(e.getCurso().getNombre());
+
+        if (e.getCurso() != null) {
+            dto.setCursoId(e.getCurso().getId());
+            dto.setNombreCurso(e.getCurso().getNombre());
+        }
+
         return dto;
     }
+
 }
