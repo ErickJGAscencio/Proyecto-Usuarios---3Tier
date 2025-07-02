@@ -7,7 +7,15 @@ Este proyecto implementa una arquitectura de tres capas (3-Tier) utilizando **Sp
 
 ## 🏗️ Arquitectura
 
-[ Cliente (Postman / Frontend React) ] ↓ [ Controlador REST (Spring Boot) ] ↓ [ Servicio (Lógica de negocio) ] ↓ [ Repositorio (Spring Data JPA) ] ↓ [ Oracle DB ]
+[ Cliente (Postman / Frontend React) ] 
+   ↓ 
+[ Controlador REST (Spring Boot) ]
+   ↓
+[ Servicio (Lógica de negocio) ] 
+   ↓ 
+[ Repositorio (Spring Data JPA) ]
+   ↓ 
+[ Oracle DB ]
 
 
 ---
@@ -26,7 +34,19 @@ Este proyecto implementa una arquitectura de tres capas (3-Tier) utilizando **Sp
 
 ## 📁 Estructura del proyecto
 
-src/ ├── controller/ │ └── UsuarioController.java ├── service/ │ └── UsuarioService.java ├── repository/ │ └── UsuarioRepository.java ├── entity/ │ ├── Usuario.java │ └── Mascota.java ├── dto/ │ └── UsuarioDto.java └── ProyectoUsuariosApplication.java
+src/ 
+├── controller/ 
+│ └── UsuarioController.java 
+├── service/ 
+│ └── UsuarioService.java 
+├── repository/ 
+│ └── UsuarioRepository.java 
+├── entity/ 
+│ ├── Usuario.java 
+│ └── Mascota.java 
+├── dto/ 
+│ └── UsuarioDto.java 
+└── ProyectoUsuariosApplication.java
 
 
 ---
