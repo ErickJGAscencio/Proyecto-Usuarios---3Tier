@@ -20,7 +20,7 @@ public class LibroProjections {
         interface AutorInfo {
             String getNombre();
 
-            String getNacionalidad(); // Ejemplo de campo adicional
+            String getNacionalidad();
         }
     }
 
